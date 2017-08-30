@@ -16,8 +16,46 @@ public enum RefreshableState<T> {
     
     case loading
     
-    case success(response: T)
+    case success(T)
     
-    case failure(error: Error)
+    case failure(Error)
+    
+    // MARK: Mutable properties
+    
+    var value: T? {
+        set {
+            guard let value = newValue else {
+                // set to ready or failure
+                return
+            }
+            
+            self = .success(value)
+        }
+        get {
+            guard case .success(let response) = self else {
+                return nil
+            }
+            
+            return response
+        }
+    }
+    
+    var error: Error? {
+        set {
+            guard let error = newValue else {
+                // set to ready or failure
+                return
+            }
+            
+            self = .failure(error)
+        }
+        get {
+            guard case .failure(let error) = self else {
+                return nil
+            }
+            
+            return error
+        }
+    }
     
 }

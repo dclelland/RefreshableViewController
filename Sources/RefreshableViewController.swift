@@ -20,9 +20,9 @@ open class RefreshableViewController<T>: UIViewController {
         self.request = request
     }
     
-    public convenience init(response: T) {
+    public convenience init(value: T) {
         self.init()
-        self.state = .success(response: response)
+        self.state = .success(value)
     }
     
     // MARK: Public state
@@ -60,10 +60,10 @@ open class RefreshableViewController<T>: UIViewController {
         
         self.state = .loading
         
-        request().then { response in
-            self.state = .success(response: response)
+        request().then { value in
+            self.state = .success(value)
         }.catch { error in
-            self.state = .failure(error: error)
+            self.state = .failure(error)
         }
     }
     

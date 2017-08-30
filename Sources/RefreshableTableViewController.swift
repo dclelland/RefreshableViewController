@@ -20,9 +20,9 @@ open class RefreshableTableViewController<T>: UITableViewController {
         self.request = request
     }
     
-    public convenience init(style: UITableViewStyle, response: T) {
+    public convenience init(style: UITableViewStyle, value: T) {
         self.init(style: style)
-        self.state = .success(response: response)
+        self.state = .success(value)
     }
     
     // MARK: Public state
@@ -62,12 +62,12 @@ open class RefreshableTableViewController<T>: UITableViewController {
         
         self.state = .loading
         
-        request().then { response in
-            self.state = .success(response: response)
+        request().then { value in
+            self.state = .success(value)
         }.always {
             self.refreshControl?.endRefreshing()
         }.catch { error in
-            self.state = .failure(error: error)
+            self.state = .failure(error)
         }
     }
     
