@@ -25,7 +25,10 @@ public enum RefreshableState<T> {
     var value: T? {
         set {
             guard let value = newValue else {
-                // set to ready or failure
+                if case .success = self {
+                    self = .ready
+                }
+                
                 return
             }
             
@@ -43,7 +46,10 @@ public enum RefreshableState<T> {
     var error: Error? {
         set {
             guard let error = newValue else {
-                // set to ready or failure
+                if case .failure = self {
+                    self = .ready
+                }
+                
                 return
             }
             
