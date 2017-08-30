@@ -11,7 +11,7 @@ import PromiseKit
 
 // MARK: Refreshable table view controller
 
-public class RefreshableTableViewController<T>: UITableViewController {
+open class RefreshableTableViewController<T>: UITableViewController {
     
     // MARK: Initializers
     
@@ -41,7 +41,7 @@ public class RefreshableTableViewController<T>: UITableViewController {
     
     // MARK: Overrides
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         if request != nil {
@@ -71,7 +71,7 @@ public class RefreshableTableViewController<T>: UITableViewController {
         }
     }
     
-    public func refreshState() {
+    open func refreshState() {
         // This should be overridden in subclasses
     }
     

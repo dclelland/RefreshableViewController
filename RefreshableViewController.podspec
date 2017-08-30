@@ -13,6 +13,6 @@ Pod::Spec.new do |s|
   s.author = { "Daniel Clelland" => "daniel.clelland@gmail.com" }
   s.source = { :git => "https://github.com/dclelland/RefreshableViewController.git", :tag => "0.1.0" }
   s.ios.source_files = 'Sources/**/*.swift'
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
   s.ios.dependency 'PromiseKit', '~> 4.0'
 end

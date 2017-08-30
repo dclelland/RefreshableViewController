@@ -11,7 +11,7 @@ import PromiseKit
 
 // MARK: Refreshable view controller
 
-public class RefreshableViewController<T>: UIViewController {
+open class RefreshableViewController<T>: UIViewController {
     
     // MARK: Initializers
     
@@ -41,7 +41,7 @@ public class RefreshableViewController<T>: UIViewController {
     
     // MARK: Overrides
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         if request != nil {
@@ -67,7 +67,7 @@ public class RefreshableViewController<T>: UIViewController {
         }
     }
     
-    public func refreshState() {
+    open func refreshState() {
         // This should be overridden in subclasses
     }
     
