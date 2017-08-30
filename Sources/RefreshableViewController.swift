@@ -1,6 +1,6 @@
 //
 //  RefreshableViewController.swift
-//  TREX
+//  RefreshableViewController
 //
 //  Created by Daniel Clelland on 30/08/17.
 //  Copyright © 2017 Daniel Clelland. All rights reserved.
@@ -11,7 +11,7 @@ import PromiseKit
 
 // MARK: Refreshable view controller
 
-open class RefreshableViewController<T>: UIViewController {
+open class RefreshableViewController<T>: UIViewController, Refreshable {
     
     // MARK: Initializers
     
@@ -51,10 +51,11 @@ open class RefreshableViewController<T>: UIViewController {
         }
     }
     
-    // MARK: Refresh
+    // MARK: Refreshable
     
     public final func refresh() {
         guard let request = request else {
+            refreshState()
             return
         }
         

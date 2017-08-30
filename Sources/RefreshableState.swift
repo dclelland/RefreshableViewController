@@ -1,12 +1,13 @@
 //
 //  RefreshableState.swift
-//  TREX
+//  RefreshableViewController
 //
 //  Created by Daniel Clelland on 30/08/17.
 //  Copyright © 2017 Daniel Clelland. All rights reserved.
 //
 
 import Foundation
+import PromiseKit
 
 // MARK: Refreshable state
 
