@@ -45,8 +45,8 @@ open class RefreshableTableViewController<T>: UITableViewController {
         super.viewDidLoad()
         
         if request != nil {
-            tableView.refreshControl = UIRefreshControl()
-            tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+            refreshControl = UIRefreshControl()
+            refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
             refresh()
         } else {
             refreshState()
