@@ -7,7 +7,7 @@
 Pod::Spec.new do |s|
   s.name = "RefreshableViewController"
   s.version = "0.1.0"
-  s.summary = "RefreshableViewController is simple view controller with state management based on PromiseKit."
+  s.summary = "RefreshableViewController is simple view controller with refreshable state management based on PromiseKit."
   s.homepage = "https://github.com/dclelland/RefreshableViewController"
   s.license = { :type => 'MIT' }
   s.author = { "Daniel Clelland" => "daniel.clelland@gmail.com" }

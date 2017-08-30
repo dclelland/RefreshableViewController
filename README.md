@@ -1,6 +1,6 @@
 ## RefreshableViewController
 
-RefreshableViewController is simple view controller with state management based on PromiseKit.
+RefreshableViewController is simple view controller with refreshable state management based on PromiseKit.
 
 Example usage:
 
