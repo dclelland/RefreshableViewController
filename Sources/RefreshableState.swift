@@ -22,7 +22,7 @@ public enum RefreshableState<T> {
     
     // MARK: Mutable properties
     
-    var value: T? {
+    public var value: T? {
         set {
             guard let value = newValue else {
                 if case .success = self {
@@ -43,7 +43,7 @@ public enum RefreshableState<T> {
         }
     }
     
-    var error: Error? {
+    public var error: Error? {
         set {
             guard let error = newValue else {
                 if case .failure = self {
