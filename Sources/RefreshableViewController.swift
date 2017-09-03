@@ -11,29 +11,29 @@ import PromiseKit
 
 // MARK: Refreshable view controller
 
-open class RefreshableViewController<T>: UIViewController, Refreshable {
+open class RefreshableViewController<Value>: UIViewController, Refreshable {
     
     // MARK: Initializers
     
-    public convenience init(request: @autoclosure @escaping (Void) -> Promise<T>) {
+    public convenience init(request: @autoclosure @escaping (Void) -> Promise<Value>) {
         self.init()
         self.request = request
     }
     
-    public convenience init(value: T) {
+    public convenience init(value: Value) {
         self.init()
         self.state = .success(value)
     }
     
     // MARK: Public state
     
-    public final var request: ((Void) -> Promise<T>)? {
+    public final var request: ((Void) -> Promise<Value>)? {
         didSet {
             refresh()
         }
     }
     
-    public final var state: RefreshableState<T> = .ready {
+    public final var state: RefreshableState<Value> = .ready {
         didSet {
             refreshState()
         }

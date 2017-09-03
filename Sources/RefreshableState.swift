@@ -11,19 +11,19 @@ import PromiseKit
 
 // MARK: Refreshable state
 
-public enum RefreshableState<T> {
+public enum RefreshableState<Value> {
     
     case ready
     
     case loading
     
-    case success(T)
+    case success(Value)
     
     case failure(Error)
     
     // MARK: Mutable properties
     
-    public var value: T? {
+    public var value: Value? {
         set {
             guard let value = newValue else {
                 if case .success = self {
