@@ -15,7 +15,7 @@ open class RefreshableViewController<Value>: UIViewController, Refreshable {
     
     // MARK: Initializers
     
-    public convenience init(request: @autoclosure @escaping (Void) -> Promise<Value>) {
+    public convenience init(request: @autoclosure @escaping () -> Promise<Value>) {
         self.init()
         self.request = request
     }
@@ -27,7 +27,7 @@ open class RefreshableViewController<Value>: UIViewController, Refreshable {
     
     // MARK: Public state
     
-    public final var request: ((Void) -> Promise<Value>)? {
+    public final var request: (() -> Promise<Value>)? {
         didSet {
             refresh()
         }

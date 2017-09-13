@@ -15,7 +15,7 @@ open class RefreshableTableViewController<Value>: UITableViewController, Refresh
     
     // MARK: Initializers
     
-    public convenience init(style: UITableViewStyle, request: @autoclosure @escaping (Void) -> Promise<Value>) {
+    public convenience init(style: UITableViewStyle, request: @autoclosure @escaping () -> Promise<Value>) {
         self.init(style: style)
         self.request = request
     }
@@ -27,7 +27,7 @@ open class RefreshableTableViewController<Value>: UITableViewController, Refresh
     
     // MARK: Public state
     
-    public final var request: ((Void) -> Promise<Value>)? {
+    public final var request: (() -> Promise<Value>)? {
         didSet {
             refresh()
         }
