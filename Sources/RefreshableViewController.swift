@@ -27,11 +27,7 @@ open class RefreshableViewController<Value>: UIViewController, Refreshable {
     
     // MARK: Public state
     
-    public final var request: (() -> Promise<Value>)? {
-        didSet {
-            refresh()
-        }
-    }
+    public final var request: (() -> Promise<Value>)?
     
     public final var state: RefreshableState<Value> = .ready {
         didSet {
