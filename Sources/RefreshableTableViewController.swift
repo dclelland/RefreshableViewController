@@ -51,7 +51,7 @@ open class RefreshableTableViewController<Value>: UITableViewController, Refresh
     
     // MARK: Refreshable
     
-    public final func refresh() {
+    @objc public final func refresh() {
         guard let request = request else {
             refreshState()
             return
