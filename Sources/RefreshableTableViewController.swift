@@ -59,7 +59,7 @@ open class RefreshableTableViewController<Value>: UITableViewController, Refresh
         
         self.state = .loading
         
-        request().then { value in
+        request().done { value in
             self.state = .success(value)
         }.always {
             self.refreshControl?.endRefreshing()

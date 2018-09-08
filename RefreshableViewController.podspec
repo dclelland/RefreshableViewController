@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
   s.source = { :git => "https://github.com/dclelland/RefreshableViewController.git", :tag => "0.6.0" }
   s.ios.source_files = 'Sources/**/*.swift'
   s.ios.deployment_target = '10.0'
-  s.ios.dependency 'PromiseKit', '~> 4.0'
+  s.ios.dependency 'PromiseKit', '~> 6.4.0'
 end

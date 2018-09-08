@@ -57,7 +57,7 @@ open class RefreshableViewController<Value>: UIViewController, Refreshable {
         
         self.state = .loading
         
-        request().then { value in
+        request().done { value in
             self.state = .success(value)
         }.catch { error in
             self.state = .failure(error)
