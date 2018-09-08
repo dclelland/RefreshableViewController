@@ -61,7 +61,7 @@ open class RefreshableTableViewController<Value>: UITableViewController, Refresh
         
         request().done { value in
             self.state = .success(value)
-        }.always {
+        }.ensure {
             self.refreshControl?.endRefreshing()
         }.catch { error in
             self.state = .failure(error)
