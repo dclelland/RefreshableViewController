@@ -49,7 +49,7 @@ open class RefreshableViewController<Value>: UIViewController, Refreshable {
     
     // MARK: Refreshable
     
-    public final func refresh() {
+    open func refresh() {
         guard let request = request else {
             refreshState()
             return
