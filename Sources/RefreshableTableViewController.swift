@@ -15,12 +15,12 @@ open class RefreshableTableViewController<Value>: UITableViewController, Refresh
     
     // MARK: Initializers
     
-    public convenience init(style: UITableViewStyle, request: @autoclosure @escaping () -> Promise<Value>) {
+    public convenience init(style: UITableView.Style, request: @autoclosure @escaping () -> Promise<Value>) {
         self.init(style: style)
         self.request = request
     }
     
-    public convenience init(style: UITableViewStyle, value: Value) {
+    public convenience init(style: UITableView.Style, value: Value) {
         self.init(style: style)
         self.state = .success(value)
     }
