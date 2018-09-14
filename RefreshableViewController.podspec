@@ -6,12 +6,13 @@
 #
 Pod::Spec.new do |s|
   s.name = "RefreshableViewController"
-  s.version = "0.7.0"
+  s.version = "0.7.1"
   s.summary = "RefreshableViewController is simple view controller with refreshable state management based on PromiseKit."
   s.homepage = "https://github.com/dclelland/RefreshableViewController"
   s.license = { :type => 'MIT' }
   s.author = { "Daniel Clelland" => "daniel.clelland@gmail.com" }
-  s.source = { :git => "https://github.com/dclelland/RefreshableViewController.git", :tag => "0.7.0" }
+  s.source = { :git => "https://github.com/dclelland/RefreshableViewController.git", :tag => "0.7.1" }
+  s.swift_version           = '4.2'
   s.ios.source_files = 'Sources/**/*.swift'
   s.ios.deployment_target = '10.0'
   s.ios.dependency 'PromiseKit', '~> 6.4.0'
